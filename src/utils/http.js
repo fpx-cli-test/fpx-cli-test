@@ -15,7 +15,7 @@ axios.interceptors.response.use(res => {
  * @return Promise
  */
 async function getRepoList() {
-  return axios.get('https://api.github.com/users/liaosirui333/repos');
+  return axios.get('https://api.github.com/orgs/fpx-cli-test/repos');
 }
 
 /**
@@ -24,7 +24,7 @@ async function getRepoList() {
  * @returns Promise
  */
 async function getTagList(repo) {
-  return axios.get(`https://api.github.com/users/liaosirui333/${repo}/tags`);
+  return axios.get(`https://api.github.com/orgs/fpx-cli-test/${repo}/tags`);
 }
 
 module.exports = {

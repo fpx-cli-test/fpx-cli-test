@@ -1,6 +1,7 @@
 const program = require('commander');
 const init = require('./init');
 const { VERSION } = require("./utils/version");
+const { downloadFile } = require('./utils/downloadFile');
 
 program
   // 添加命令名称 (跟<>代表名称必填、 []选填)，该参数会被传入至action的回调以及program.args数组中
@@ -11,6 +12,14 @@ program
   .option('-f --force', 'overwrite target directory if it exist')
   .action((name, options) => {
     init(name, options)
+  })
+
+program
+  .command('create-file [file-name]')
+  .alias('cf')
+  .description('创建文件模版')
+  .action((name) => {
+    downloadFile(name);
   })
 
 program

@@ -3,7 +3,7 @@ const { getRepoList, getTagList } = require('./http');
 const { wrapLoading } = require('./wrapLoading');
 
 
-const downloadModule = async () => {
+const downloadProgram = async () => {
   // 下载模版 配置相关信息
   // 获取用户选择的模版
   const getRepo = async () => {
@@ -56,8 +56,8 @@ const downloadModule = async () => {
   const repo = await getRepo();
   const tag = await getTag(repo);
   // 1) 拼接下载地址
-  const requestUrl = `liaosirui333/${repo}${tag?'#'+tag:''}`;
+  const requestUrl = `fpx-cli-test/${repo}${tag?'#'+tag:''}`;
   return requestUrl;
 };
 
-module.exports = { downloadModule }
+module.exports = { downloadProgram }

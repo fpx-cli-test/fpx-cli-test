@@ -8,14 +8,14 @@ const chalk = require('chalk');
 const { promisify } = require('util');
 const path = require('path');
 const { install } = require('./install');
-const { downloadModule } = require('./dowmloadModule');
+const { downloadProgram } = require('./dowmloadProgram');
 const { downloadGit } = require('./downloadGitRepo');
 const fs = require('fs-extra');
 
 
 const exist = promisify(fs.stat)
 
-const create = (projectName, targetDir) => {
+const create = (projectName) => {
   // 接收用户命令
   inquirer
     .prompt([
@@ -41,7 +41,7 @@ const create = (projectName, targetDir) => {
       },
     ]).then(async answer => {
       // 下载模版 配置相关信息
-      const requestUrl = await downloadModule();
+      const requestUrl = await downloadProgram();
       let loading = ora('downloading template...');
       loading.start();
       loading.color = 'yellow';
