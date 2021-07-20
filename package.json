@@ -1,0 +1,39 @@
+{
+  "name": "my-cli",
+  "version": "0.0.1",
+  "description": "三三的测试脚手架",
+  "main": "dist/index.js",
+  "bin": {
+    "fpx-cli": "./bin/www"
+  },
+  "files": [
+    "bin",
+    "dist/**/*.js"
+  ],
+  "scripts": {
+    "compile": "babel src -d dist --extensions '.ts' ",
+    "watch": "npm run compile -- --watch"
+  },
+  "author": "liaosir",
+  "license": "ISC",
+  "keywords": [
+    "脚手架"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "cross-spawn": "^7.0.3",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.1",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.3.3",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3"
+  }
+}
